@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Welcome, <%= user.username %></h1>
+  <h2>Available Buses</h2>
+  <% buses.forEach(bus => { %>
+    <div class="card">
+      <p>🚌 Route: <%= bus.route %></p>
+      <p>🕒 Time: <%= bus.time %></p>
+      <p>₹ <%= bus.price %></p>
+      <p>Seats Left: <%= bus.seats %></p>
+      <form action="/book/<%= bus.id %>">
+        <button>Book Pass</button>
+      </form>
+    </div>
+  <% }) %>
+</div>
